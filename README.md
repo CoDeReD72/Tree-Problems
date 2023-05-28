@@ -1,37 +1,35 @@
-# Sum of Node IDs in a Tree
+# Tree Node Problems and Solutions
 
-This repository provides a solution to the problem of calculating the sum of all node IDs in a tree structure using two different approaches: recursive and hashmap optimisation.
+This repository provides solutions to two common tree node problems: calculating the sum of node IDs and sorting nodes based on the number of children. Two approaches, recursive and hashmap, are implemented to solve these problems.
 
-## Problem
+## Problem 1: Calculate the Sum of Node IDs
 
-Given a tree data structure represented by `TreeNode` objects, the task is to calculate the sum of all node IDs in the tree.
+Given a tree represented by a collection of nodes, each having a unique ID and a list of children, the task is to calculate the sum of all node IDs in the tree.
 
-## Tree Structure
+![Tree Diagram for Sum Prolem](assets/sumExample.png)
 
-The `TreeNode` type is defined as an object with three properties: `id` of type number, `name` of type string, and `children` which is an array of `TreeNode` objects representing the children of the current node.
+In this instance, the sum of all node IDs is 21.
 
-## Recursive Approach
+### Recursive Approach
 
-The recursive approach is implemented in the `recursive` function. It takes a `TreeNode` object as a parameter and recursively calculates the sum of all node IDs in the tree. If a node has no children, it returns the ID of the node. Otherwise, it calculates the sum of the current node's ID and the recursive calls to `recursive` for each child node. The `map` function is used to apply the `recursive` function to each child node, and then the `reduce` function is used to sum up the results.
+The recursive approach involves traversing the tree in a recursive manner and adding the IDs of all nodes. Starting from the root node, we recursively visit each child node. If a node has no children, its ID is added to the sum. If a node has children, we calculate the sum of their IDs recursively and add it to the node's ID. The process continues until all nodes in the tree are visited.
 
-## Hashmap Approach for Optimisation
+### Hashmap Approach
 
-In some cases, the recursive approach might result in redundant calculations. To optimise the solution, a hashmap can be used to store the sum of node IDs for each subtree. This avoids recalculating the sum for the same subtree multiple times.
+The hashmap approach uses a hashmap data structure to store the nodes during a depth-first traversal. We start with the root node and iteratively visit each node using a stack. While visiting each node, we add its ID to the sum. If a node has children, we push them onto the stack for further processing. After traversing the entire tree, we return the sum of node IDs.
 
-The hashmap optimisation approach involves traversing the tree in a bottom-up manner. Starting from the leaf nodes, we calculate and store the sum of node IDs for each subtree in the hashmap. Then, when we encounter a parent node, we can easily access the sums of its child subtrees from the hashmap and calculate the sum for the parent node. This way, we avoid redundant recursive calculations.
+## Problem 2: Sort Nodes Based on Number of Children
 
-## Usage
+Given a tree represented by a collection of nodes, each having a unique ID and a list of children, the task is to sort the nodes based on the number of children they have, in descending order.
 
-To calculate the sum of node IDs in a tree, follow these steps:
+![Tree Diagram for Sorting Problem](assets/sortExample.png)
 
-1. Define the tree structure using `TreeNode` objects.
-2. Call the `recursive` function, passing the root node of the tree as the parameter.
-3. The function will return the sum of all node IDs in the tree.
+In this instance, the sorted order of nodes is `[0 (root), 9, 2, 1, 6, 4, 12, 11, 10, 8, 5, 7, 3]`
 
-## Example
+### Recursive Approach
 
-Consider the following example tree structure:
+The recursive approach can be extended to solve this problem as well. After calculating the sum of node IDs recursively, we can sort the nodes based on the number of children. We can achieve this by modifying the recursive function to return an array of nodes instead of the sum. Each node object will include its ID, the number of children, and the child nodes. Finally, we sort the array of nodes based on the number of children in descending order.
 
-![Example Tree](./assets/example.png)
+### Hashmap Approach
 
-For this tree, the sum of node IDs is 21.
+The hashmap approach can also be used to solve this problem. While traversing the tree using the hashmap approach, we store each node in a hashmap along with its number of children. After traversing the entire tree, we convert the hashmap to an array and sort the nodes based on the number of children in descending order.
