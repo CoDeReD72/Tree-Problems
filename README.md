@@ -1,6 +1,6 @@
 # Sum of Node IDs in a Tree
 
-This repository provides a solution to the problem of calculating the sum of all node IDs in a tree structure using two different approaches: recursive and hashmap optimization.
+This repository provides a solution to the problem of calculating the sum of all node IDs in a tree structure using two different approaches: recursive and hashmap optimisation.
 
 ## Problem
 
@@ -14,7 +14,7 @@ The `TreeNode` type is defined as an object with three properties: `id` of type 
 
 The recursive approach is implemented in the `recursive` function. It takes a `TreeNode` object as a parameter and recursively calculates the sum of all node IDs in the tree. If a node has no children, it returns the ID of the node. Otherwise, it calculates the sum of the current node's ID and the recursive calls to `recursive` for each child node. The `map` function is used to apply the `recursive` function to each child node, and then the `reduce` function is used to sum up the results.
 
-## Hashmap Approach for Optimszation
+## Hashmap Approach for Optimisation
 
 In some cases, the recursive approach might result in redundant calculations. To optimise the solution, a hashmap can be used to store the sum of node IDs for each subtree. This avoids recalculating the sum for the same subtree multiple times.
 
