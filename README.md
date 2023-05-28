@@ -32,12 +32,6 @@ To calculate the sum of node IDs in a tree, follow these steps:
 
 Consider the following example tree structure:
 
-   0 (root)
-   |
- |   |
- 1   2
- |   |
-| | | |
-3 4 5 6
+![Example Tree](./assets/example.png)
 
 For this tree, the sum of node IDs is 21.

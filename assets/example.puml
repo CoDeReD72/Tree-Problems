@@ -1,0 +1,27 @@
+@startuml
+skinparam node {
+  Shape circle
+  BackgroundColor White
+  BorderColor Black
+}
+
+' Root Node
+node "0 (root)" as root
+
+' Child Nodes
+node "1" as node1
+node "2" as node2
+node "3" as node3
+node "4" as node4
+node "5" as node5
+node "6" as node6
+
+' Connections
+root -- node1
+node1 -- node2
+node1 -- node3
+node1 -- node4
+node2 -- node5
+node2 -- node6
+
+@enduml
